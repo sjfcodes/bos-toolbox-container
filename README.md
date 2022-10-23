@@ -2,7 +2,15 @@
 
 While attemting to install Braiins OS on an Antminer s9, I was unable to run the bos-toolbox on my mac &  did not find any solutions online.
 
-Heres how I was able to run the toolbox, unlock miner SSH, & install the Braiins OS firmware.
+Error code recieved:
+
+```bash
+exec format error: ./bos-toolbox
+```
+
+Heres how I was able to:
+- Run the bos-toolbox in a linux container
+- Unlock Antminer S9 SSH & install Braiins OS on miner.
 
 1. Clone this repo.
 
@@ -11,21 +19,21 @@ Heres how I was able to run the toolbox, unlock miner SSH, & install the Braiins
 3. Follow this guide to [Run Linux GUI apps on Mac](https://www.youtube.com/watch?v=cNDR6Z24KLM) 
 
     - Install [XQuartz](https://www.xquartz.org/)
-    - Open mac's terminal & run cmd to get machine's ip address
-
+    - Run cmd in MAC terminal to get your local machine's ip address
         ```bash
         ifconfig en0
         ```
-        - look for `inet xxx.xxx.xxx.xxx`, copy ip address -> `xxx.xxx.xxx.xxx`
+        - Look for `inet xxx.xxx.xxx.xxx`, copy ip address -> `xxx.xxx.xxx.xxx`
+
     - Launch XQuartz
         - Open Preferences > security > check box to 'Allow connections from network clients'
-        - Run cmd in XQuartz terminal (replace `<MACHINE_IP>` with ip obtained earlier)
+        - Run cmd in XQUARTZ terminal (replace `<MACHINE_IP>` with ip obtained earlier)
 
             ```bash
             xhost <MACHINE_IP>
             ```
 
-- Download [Docker Desktop](https://docs.docker.com/desktop/install/mac-install/) & launch application
+- Download, install, & start [Docker Desktop](https://docs.docker.com/desktop/install/mac-install/)
 - Open a terminal in this repo's root directory
 - Build an image from repo's Dockerfile
 
