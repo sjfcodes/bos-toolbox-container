@@ -44,7 +44,7 @@ Heres how I was able to:
 - Run container from image (will lauch the `bos-toolbox` GUI)
 
     ```bash
-    docker run -it -e DISPLAY=<MACHINE_IP>:0 --rm --name ubuntu-bt ubuntu-bt
+    docker run -it -e DISPLAY=<MACHINE_IP>:0 --rm ubuntu-bt
     ```
 
 Cheers!
